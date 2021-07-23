@@ -1,0 +1,33 @@
+version: "2"
+
+networks:
+    credentials_network:
+        driver: bridge
+        ipam:
+            config:
+                - subnet: "169.254.170.0/24"
+                  gateway: 169.254.170.1
+
+services:
+  {{cookiecutter.project_dir}}-ecs-local-endpoints:
+    image: amazon/amazon-ecs-local-container-endpoints
+    env_file: .env_aws_profile
+    volumes:
+      - /var/run:/var/run
+      - $HOME/.aws/:/home/.aws/
+    networks:
+      credentials_network:
+        ipv4_address: "169.254.170.2"
+
+  {{cookiecutter.project_dir}}-jupyter-lab:
+    image: tuteco/{{cookiecutter.project_dir}}:latest-dev
+    env_file: .env
+    volumes:
+      - ./work:/home/jovyan/work
+    ports:
+      - "8888:8888"
+    depends_on:
+      - {{cookiecutter.project_dir}}-ecs-local-endpoints
+    networks:
+      credentials_network:
+        ipv4_address: "169.254.170.3"
