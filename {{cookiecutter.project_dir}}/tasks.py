@@ -1,7 +1,7 @@
 from invoke import task
 
 PROJECT_DIR = '{{cookiecutter.project_dir}}'
-IMAGE_NAME = f"tuteco/{PROJECT_DIR}"
+IMAGE_NAME = f"local/{PROJECT_DIR}"
 
 
 @task
