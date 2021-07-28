@@ -1,9 +1,0 @@
-boto3==1.17.106
-lckr-jupyterlab-variableinspector==3.0.9
-isort==5.9.2
-jedi-language-server==0.34.1
-jupyterlab-code-formatter==1.4.10
-jupyterlab-drawio==0.9.0
-jupyterlab-lsp==3.8.0
-plotly==5.1.0
-s3fs==2021.7.0

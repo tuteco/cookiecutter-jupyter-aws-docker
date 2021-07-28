@@ -20,7 +20,7 @@ services:
         ipv4_address: "169.254.170.2"
 
   {{cookiecutter.project_dir}}-jupyter-lab:
-    image: tuteco/{{cookiecutter.project_dir}}:latest-dev
+    image: tuteco/jupyter_datascience_pyspark:latest
     env_file: .env
     volumes:
       - ./work:/home/jovyan/work
