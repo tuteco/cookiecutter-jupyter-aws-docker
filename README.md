@@ -1,8 +1,8 @@
 # cookiecutter-jupyter-aws-docker
 
-cookiecutter template for data analysis with JupyterLab.
+cookiecutter template for data analysis with JupyterLab **including a tutorial** to get a jump start.
 
-Based on the extended docker image [tuteco/jupyter_datascience_pyspark](https://hub.docker.com/r/tuteco/jupyter_datascience_pyspark).
+This template is based on the extended docker image [tuteco/jupyter_datascience_pyspark](https://hub.docker.com/r/tuteco/jupyter_datascience_pyspark).
 You can see the packages included in the [github repository](https://github.com/tuteco/jupyter_datascience_pyspark)
 
 ## Usage
@@ -26,11 +26,9 @@ Parameters you need to provide:
     - /creds: use your local credentials from the host OS
     - /role: define a role in AWS
 - aws_role: the role name, if /creds chosen before leave it empty
-- s3_bucket: if filled, you will find a working example in your notebooks; if blank the example won't work
-- s3_prefix: the prefix to a csv file. Also for the example code
 
 More background information on working with local containers can be found on the 
-[AWS COmpute Blog](https://aws.amazon.com/blogs/compute/a-guide-to-locally-testing-containers-with-amazon-ecs-local-endpoints-and-docker-compose/)
+[AWS Compute Blog](https://aws.amazon.com/blogs/compute/a-guide-to-locally-testing-containers-with-amazon-ecs-local-endpoints-and-docker-compose/)
 
 ## extending the image
 For inital working with this setup you don't need to extend the image.
@@ -47,19 +45,7 @@ invoke build-local
 ```
 
 The image crated has the default name of ``local/{project_path}``, where the `{project_path` is the one you specified 
-during the cookiecutter setup. This is the new image name you need to replace in docker-compose.yml.
+during the cookiecutter setup. 
+This is the new image name you need to replace for the service container in the in docker-compose.yml.
 
-```
-    image: tuteco/jupyter_datascience_pyspark:latest
-    env_file: .env
-    volumes:
-      - ./work:/home/jovyan/work
-    ports:
-      - "8888:8888"
-    depends_on:
-      - {{cookiecutter.project_dir}}-ecs-local-endpoints
-    networks:
-      credentials_network:
-        ipv4_address: "169.254.170.3"
-```
 
