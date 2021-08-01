@@ -1,5 +1,7 @@
 version: "2"
 
+# network to simulate the AWS environment
+# do not change the IP addresses of the network, otherwise the authentication wont work
 networks:
     credentials_network:
         driver: bridge
@@ -9,6 +11,10 @@ networks:
                   gateway: 169.254.170.1
 
 services:
+  # AWS sidecar container, to enable local authentication for other service containers
+  # practically it simulates the behavior of the AWS cloud
+  # read more on this setup
+  # https://aws.amazon.com/blogs/compute/a-guide-to-locally-testing-containers-with-amazon-ecs-local-endpoints-and-docker-compose/
   {{cookiecutter.project_dir}}-ecs-local-endpoints:
     image: amazon/amazon-ecs-local-container-endpoints
     env_file: .env_aws_profile
@@ -19,6 +25,10 @@ services:
       credentials_network:
         ipv4_address: "169.254.170.2"
 
+  # jupyter lab container based on the extended image wich is prebuild for AWS usage
+  # with additional pagages
+  # read more on the content of the image
+  # https://github.com/tuteco/jupyter_datascience_pyspark
   {{cookiecutter.project_dir}}-jupyter-lab:
     image: tuteco/jupyter_datascience_pyspark:latest
     env_file: .env
@@ -31,3 +41,4 @@ services:
     networks:
       credentials_network:
         ipv4_address: "169.254.170.3"
+

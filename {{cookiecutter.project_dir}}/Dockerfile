@@ -1,4 +1,4 @@
-FROM jupyter/all-spark-notebook
+FROM tuteco/jupyter_datascience_pyspark:latest
 
 # install additional packages
 COPY ./requirements.txt /home/jovyan/requirements.txt
