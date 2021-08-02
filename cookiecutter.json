@@ -4,7 +4,5 @@
     "aws_account_number": "",
     "aws_default_region": "",
     "aws_container_credentials_relative_uri": ["/creds", "/role"],
-    "aws_role": "{% if cookiecutter.aws_container_credentials_relative_uri == \"/role\" %}<required>{% endif %}",
-    "s3_bucket": "",
-    "s3_prefix": ""
+    "aws_role": "{% if cookiecutter.aws_container_credentials_relative_uri == \"/role\" %}<required>{% endif %}"
 }
