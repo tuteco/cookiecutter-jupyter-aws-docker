@@ -1,5 +1,14 @@
-# cookiecutter-jupyter-aws-docker
+# Project template for dockerized Jupyter Lab with AWS
 
+```
+   _         _                 
+  | |_ _   _| |_ ___  ___ ___  
+  | __| | | | __/ _ \/ __/ _ \ 
+  | |_| |_| | ||  __/ (_| (_) |
+ (_)__|\__,_|\__\___|\___\___/ 
+ 
+ -- data & knowledge experts --                              
+```
 cookiecutter template for data analysis with JupyterLab **including a tutorial** to get a jump start.
 
 This template is based on the extended docker image [tuteco/jupyter_datascience_pyspark](https://hub.docker.com/r/tuteco/jupyter_datascience_pyspark).
