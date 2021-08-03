@@ -22,7 +22,7 @@ Prerequisites:
 
 generate a new project, you simply call
 ```
-cookiecutter git@github.com:tuteco/cookiecutter-jupyter-aws-docker.git -o <target_directory>
+cookiecutter https://github.com/tuteco/cookiecutter-jupyter-aws-docker.git -o <target_directory>
 ```
 if `-o <target directory>` is omitted, the project will be generated in the current directory 
 
