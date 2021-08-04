@@ -1,6 +1,6 @@
 from invoke import task
 
-PROJECT_DIR = '{{cookiecutter.project_dir}}'
+PROJECT_DIR = 'local/{{PROJECT_DIR}}'
 IMAGE_NAME = f"local/{PROJECT_DIR}"
 
 

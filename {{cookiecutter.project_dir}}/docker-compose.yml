@@ -15,7 +15,7 @@ services:
   # practically it simulates the behavior of the AWS cloud
   # read more on this setup
   # https://aws.amazon.com/blogs/compute/a-guide-to-locally-testing-containers-with-amazon-ecs-local-endpoints-and-docker-compose/
-  {{cookiecutter.project_dir}}-ecs-local-endpoints:
+  ecs-local-endpoints:
     image: amazon/amazon-ecs-local-container-endpoints
     env_file: .env_aws_profile
     volumes:
@@ -37,7 +37,7 @@ services:
     ports:
       - "8888:8888"
     depends_on:
-      - {{cookiecutter.project_dir}}-ecs-local-endpoints
+      - ecs-local-endpoints
     networks:
       credentials_network:
         ipv4_address: "169.254.170.3"
