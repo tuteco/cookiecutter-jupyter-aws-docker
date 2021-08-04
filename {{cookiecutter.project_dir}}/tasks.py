@@ -1,6 +1,6 @@
 from invoke import task
 
-PROJECT_DIR = 'local/{{PROJECT_DIR}}'
+PROJECT_DIR = '{{project_dir}}'
 IMAGE_NAME = f"local/{PROJECT_DIR}"
 
 
