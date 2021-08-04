@@ -23,6 +23,7 @@ We use `invoke` to support various task in working with the container:
   invoke --help <task>
   ```  
 
+**Read more** on using [invoke](http://www.pyinvoke.org/) and extending it for your projetcs needs.
 
 
 ## Image Extension
@@ -32,12 +33,18 @@ We use `invoke` to support various task in working with the container:
 > if you extend the image, please describe the details and provide the URLs to te github or project pages
 
 ### additional python libraries
+>document the python libraries you used to extend the image
 - name of library: reason for usage
 
-### additional jupyter extensions
-- name of extension
 
-- build local image
+### additional jupyter extensions
+>document the jupyter extensions you used to extend the image
+- name of extension: reason for usage
+
+### build local image
+
+Building your local image is done by calling invoke: 
+
   ```
   invoke build-local
   ```

@@ -42,7 +42,7 @@ More background information on working with local containers can be found on the
 ## extending the image
 For inital working with this setup you don't need to extend the image.
 
-If your requiremets grow for additional python libraries or jupyter extension you need for your notebooks,
+If your requirements grow for additional python libraries or jupyter extension you need for your notebooks,
 you want to build your own local image. To do this, you need to modify the following files in your project:
 - requirements.txt: any python library you want to install 
 - Dockerfile: any extensions that cannot be installed via pip or other binaries required
